@@ -1,0 +1,41 @@
+#EXTM3U
+#EXTINF:0,Ìàðóñÿ FM
+http://radio-holding.ru:9000/marusya_default
+#EXTINF:0,Ïèîíåð FM Ñàðîâ
+http://listen6.myradio24.com/sarov
+#EXTINF:0,Èíòåðâîëíà ×åëÿáèíñê
+http://online.intervolna.ru:8001/radio192
+#EXTINF:0,ÒÍÒ Music Radio
+http://tntradio.hostingradio.ru:8027/tntradio128.mp3
+#EXTINF:0,Ðîäíîå ðàäèî Çàðå÷íûé (Ïåíçåíñêàÿ îáëàñòü)
+http://85.234.36.51:8000/radio
+#EXTINF:0,Ìîíòå-Êàðëî Íèæíèé Íîâãîðîä
+http://online2.gkvr.ru:8000/mc_nno_64.aac
+#EXTINF:0,Ðàäèî Äåíü Êàìåíñê-Óðàëüñêèé
+http://prepros.radioday.fm/Kamensk_Ur
+#EXTINF:0,Äîðîæíîå ðàäèî Óôà
+http://emgregion.hostingradio.ru:8064/ufa.dorognoe.mp3
+#EXTINF:0,Ðóññêèé Õèò Ñåðïóõîâ
+http://online.holdingfm.ru:8010/rushit
+#EXTINF:0,Ðàäèî Øàíñîí Ëèïåöê
+http://onair.lipetskfm.ru:8000/chanson
+#EXTINF:0,Ðàäèî Âàíÿ Ñàðàòîâ
+http://vanyareg.hostingradio.ru/saratov.vanya128.mp3
+#EXTINF:0,Ñâî¸ ðàäèî Ëóãàíñê
+https://radio.gtrklnr.ru:8443/yours.fm
+#EXTINF:0,Àâòîðàäèî Âûêñà
+http://79.132.121.108:8000/avtoradiovyksa
+#EXTINF:0,Íàøå ðàäèî Êóðñê
+http://77.241.21.10:8000/nasheradio.mp3
+#EXTINF:0,Ðàäèî Ðîäíûõ Äîðîã Âîëîêîëàìñê 
+http://cdn.radio1.news:8000/RRD_Volokolamsk_102_3
+#EXTINF:0,Ðåëàêñ FM Ñèìôåðîïîëü
+http://109.200.130.38:8000/relax-simf
+#EXTINF:0,Ðóññêîå ðàäèî Îð¸ë
+http://37.208.68.189:8034/;
+#EXTINF:0,Ðàäèî Þíîñòü ÂÃÒÐÊ
+http://icecast.vgtrk.cdnvideo.ru/unost_mp3_192kbps
+#EXTINF:0,Íîâîðîññèÿ-Ðîêñ Äîíåöê
+http://212.66.37.34:8000/nrocks
+#EXTINF:0,Ðàäèî Ðàíäåâó Íèæíèé Íîâãîðîä
+https://stream.komplex-group.ru:8443/Randevu

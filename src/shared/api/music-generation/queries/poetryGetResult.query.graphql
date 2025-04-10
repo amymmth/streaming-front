@@ -1,0 +1,5 @@
+query PoetryGetResult($poetryId: String!) {
+    poetryGetResult(poetryId: $poetryId) {
+        ...PoetryEntityFields
+    }
+}

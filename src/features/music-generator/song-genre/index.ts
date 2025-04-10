@@ -1,0 +1,1 @@
+export {SongGenresInput} from './song-genres-input.tsx'

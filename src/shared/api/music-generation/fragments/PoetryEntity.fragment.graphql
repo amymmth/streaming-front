@@ -1,0 +1,11 @@
+fragment PoetryEntityFields on PoetryEntity {
+    createdAt
+    estimation
+    id
+    requestId
+    requestText
+    resultText
+    score
+    status
+    variants
+}

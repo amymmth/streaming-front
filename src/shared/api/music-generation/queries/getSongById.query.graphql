@@ -1,0 +1,5 @@
+query GetSongById($id: String!) {
+    getSongById(id: $id) {
+        ...SongEntityFields
+    }
+}

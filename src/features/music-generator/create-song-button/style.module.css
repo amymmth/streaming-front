@@ -1,0 +1,36 @@
+.symformerGradient {
+    background-color: hsl(238, 92%, 36%);
+    background-image:
+            radial-gradient(ellipse 150% 200% at 100% 0%, hsla(317, 66%, 54%, 1) 0px, transparent 50%),
+            radial-gradient(ellipse 120% 200% at 51% 0%, hsl(201, 100%, 67%) 0px, transparent 50%),
+            radial-gradient(ellipse 140% 220% at 37% 100%, hsl(317, 66%, 54%) 0px, transparent 50%),
+            radial-gradient(ellipse 120% 200% at 49% 99%, hsl(219, 100%, 58%) 0px, transparent 50%),
+            radial-gradient(ellipse 120% 300% at 99% 98%, hsla(240, 47%, 47%, 1) 0px, transparent 50%),
+            radial-gradient(ellipse 120% 200% at 0% 0%, hsla(238, 92%, 36%, 1) 0px, transparent 50%);
+}
+
+.gradient {
+    background:
+            radial-gradient(
+                    300px 200px at 0% 190px,
+                    rgb(237, 94, 95) 0%,
+                    rgba(255, 105, 180, 0) 100%
+            ),
+            radial-gradient(
+                    300px 200px at 40% 400%,
+                    /*rgb(160, 102, 213) 0%,*/
+                    rgb(237, 94, 95) 0%,
+                    rgba(255, 105, 180, 0) 100%
+            ),
+            radial-gradient(
+                    50% 150px at 100% -100%,
+                    rgb(160, 102, 213) 0%,
+                    rgba(255, 105, 180, 0) 100%
+            ),
+            linear-gradient(
+                    17deg,
+                    rgb(194, 102, 140) 0%,
+                    rgb(160, 102, 213) 100%
+            );
+}
+

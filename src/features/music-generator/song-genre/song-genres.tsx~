@@ -1,0 +1,103 @@
+import React, {forwardRef, useEffect, useState} from "react";
+import {useMusicStyles} from "entities/music/music-styles";
+import {Textarea} from "shared/ui/textarea.tsx";
+import {genres as lyricsGenres, instrumentalGenres} from "./genres.constant.ts";
+import {SongGenreTags} from "./song-genre-tags";
+import {SongGenres as SongGenresType} from "./song-genres.model.ts";
+import {MusicModeEnum} from "features/music-generator/music-mode-selector";
+
+interface MusicGenresProps {
+    onTextareaFocus?: (e: React.FocusEvent<HTMLTextAreaElement>) => void;
+    inputValue?: string;
+    onInputChange?: (value: string) => void;
+
+    isInsideKeyboard?: boolean
+    activeMode?: MusicModeEnum;
+}
+
+export const SongGenres = forwardRef<HTMLTextAreaElement, MusicGenresProps>(
+    ({activeMode, isInsideKeyboard, onTextareaFocus, inputValue, onInputChange}, ref) => {
+        const genres = activeMode === MusicModeEnum.withLyrics ? lyricsGenres : instrumentalGenres
+        const {musicStyles, setMusicStyles} = useMusicStyles()
+        const [activeGenres, setActiveGenres] = useState<SongGenresType[] | null>(null);
+
+        const getRandomPrompt = (prompts: string[]) => {
+            return prompts[Math.floor(Math.random() * prompts.length)];
+        };
+
+        const addGenre = (genre: SongGenresType) => {
+            const randomPrompt = getRandomPrompt(genre.prompt);
+
+            const promptExists = genre.prompt.some((p) =>
+                musicStyles?.toLowerCase().includes(p.toLowerCase())
+            );
+
+            if (!promptExists) {
+                if (onInputChange) {
+                    onInputChange(musicStyles ? `${musicStyles}, ${randomPrompt}` : randomPrompt);
+                    setActiveGenres((prev) => [...(prev || []), genre]);
+                }
+            } else {
+                if (onInputChange) {
+                    const regex = new RegExp(
+                        genre.prompt.map((p) => `(,\\s*${p}|${p},\\s*|${p})`).join('|'),
+                        'i'
+                    );
+                    onInputChange(musicStyles?.replace(regex, '').replace(/,\s*$/, '').trim());
+                    setActiveGenres((prev) => prev?.filter((g) => g.label !== genre.label));
+                }
+            }
+        };
+
+
+        useEffect(() => {
+            setMusicStyles(inputValue as string);
+        }, [inputValue]);
+
+        useEffect(() => {
+            if (musicStyles.length === 0) {
+                if (onInputChange) {
+                    onInputChange('');
+                }
+            }
+        }, [musicStyles]);
+
+        return (
+            <>
+                <h3 className="text-md font-medium tracking-tight"> {isInsideKeyboard ? 'Напишите стиль музыки' : 'Выберите или напишите стиль музыки'}</h3>
+                {!isInsideKeyboard &&
+                    <SongGenreTags
+                        genres={genres.map((genre) => genre.label)}
+                        activeGenres={activeGenres ? activeGenres.map((genre) => genre.label) : []}
+                        setActiveGenre={(newGenres) => {
+                            let newGenre = newGenres.find((genre) => !activeGenres?.map((g) => g.label).includes(genre));
+                            if (!newGenre) {
+                                if (newGenres?.length === 0) {
+                                    newGenre = activeGenres?.[0].label;
+                                } else {
+                                    newGenre = activeGenres?.find((genre) => !newGenres.includes(genre.label))?.label;
+                                }
+                            }
+
+                            addGenre(genres.find((genre) => genre.label === newGenre)!);
+                            setActiveGenres(genres.filter((genre) => newGenres.includes(genre.label)));
+                        }}
+                    />
+                }
+
+                <Textarea
+                    id="musicGanres"
+                    name="musicGanres"
+                    placeholder='Например, минималистичное техно с басом'
+                    value={inputValue} // Привязка к значению input
+                    onChange={(e) => onInputChange && onInputChange(e.target.value)} // Передача изменений
+                    onFocus={onTextareaFocus} // Передаем обработчик фокуса
+                    className="w-full bg-opacity-5 bg-white text-white rounded-lg"
+                    ref={ref}
+                    rows={2}
+                />
+
+            </>
+        );
+    }
+)

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Your+Custom+Font:wght@400;700&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  :root {
+    --bg: 0, 0%, 9%;
+    --background: hsl(var(--bg));
+    --foreground: hsl(210 20% 98%);
+      --border: hsl(0, 0%, 14%);
+
+    --font-family: 'SB Sans Text', sans-serif;
+
+
+
+  }
+}
+.radio {
+  --font-size-factor: 1;
+
+  --font-size-xs:   calc(0.75rem * var(--font-size-factor));
+  --font-size-sm:   calc(0.875rem * var(--font-size-factor));
+  --font-size-base: calc(1rem * var(--font-size-factor));
+  --font-size-lg:   calc(1.125rem * var(--font-size-factor));
+  --font-size-xl:   calc(1.25rem * var(--font-size-factor));
+  --font-size-2xl:   calc(1.5rem * var(--font-size-factor));
+  --font-size-3xl:   calc(1.875rem * var(--font-size-factor));
+}
+
+.radio * {
+  font-size: var(--font-size-base);
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans text-base;
+  }
+}
+
+@layer utilities {
+  /* Скрыть scrollbar для Chrome, Safari и Opera */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  /* Скрыть scrollbar для IE, Edge и Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE и Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+/*
+  Theme: symformerKeyboard
+*/
+.simple-keyboard.symformerKeyboard {
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.simple-keyboard.symformerKeyboard .hg-button {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--background);
+  border-color: var(--border);
+  border-width: 2px;
+  color: white;
+}
+.simple-keyboard.symformerKeyboard .hg-button.hg-functionBtn {
+  /*height: 50px;*/
+  width: 20px;
+}
+.simple-keyboard.symformerKeyboard .hg-button.hg-button-space {
+  /*height: 50px;*/
+  width: 490px;
+}
+
+.simple-keyboard.symformerKeyboard .hg-button:active {
+  background: #1c4995;
+  color: white;
+}
+
+#root .simple-keyboard.symformerKeyboard + .simple-keyboard-preview {
+  background: #1c4995;
+}
+
+
+
+button {
+  &:focus-visible,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+}
+
+@font-face {
+  font-family: 'DrukTextWideCyrHeavy';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local('DrukTextWideCyrHeavy'), url('/src/shared/assets/fonts/DrukTextWideCyrHeavy.otf') format('opentype');
+}
+
+body,
+html{
+  background: var(--background);
+  font-family: var(--font-family), sans-serif;
+  letter-spacing: -19;
+  overscroll-behavior: none;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+  background: var(--background);
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 20px rgba(40, 140, 199, 0.01), 0 0 10px rgba(40, 140, 199, 0.1), 0 0 15px rgba(40, 140, 199, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 500px rgba(40, 140, 199, 0.2), 0 0 20px rgba(40, 140, 199, 0.3), 0 0 30px rgba(40, 140, 199, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(40, 140, 199, 0.01), 0 0 10px rgba(40, 140, 199, 0.1), 0 0 15px rgba(40, 140, 199, 0.1);
+  }
+}
+
+.animate-glow {
+  animation: glow 1.5s ease-in-out infinite;
+}

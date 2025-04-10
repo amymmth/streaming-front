@@ -1,0 +1,5 @@
+query getSongs($input: SongQueryInput!) {
+    getSongs(input: $input){
+        ...SongEntityFields
+    }
+}

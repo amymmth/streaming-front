@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'SB Sans Text';
+    src: url('SBSansText.0.2.0/SBSansText-Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SB Sans Text';
+    src: url('SBSansText.0.2.0/SBSansText-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SB Sans Text';
+    src: url('SBSansText.0.2.0/SBSansText-SemiboldItalic.woff2') format('woff2');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SB Sans Text';
+    src: url('SBSansText.0.2.0/SBSansText-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SB Sans Text';
+    src: url('SBSansText.0.2.0/SBSansText-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SB Sans Text';
+    src: url('SBSansText.0.2.0/SBSansText-Semibold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SB Sans Text';
+    src: url('SBSansText.0.2.0/SBSansText-LightItalic.woff2') format('woff2');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SB Sans Text';
+    src: url('SBSansText.0.2.0/SBSansText-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SB Sans Text';
+    src: url('SBSansText.0.2.0/SBSansText-BoldItalic.woff2') format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SB Sans Text';
+    src: url('SBSansText.0.2.0/SBSansText-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}

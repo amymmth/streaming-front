@@ -1,0 +1,5 @@
+mutation makeReaction($input: MakeReactionInput!) {
+    makeReaction(input: $input) {
+        ...ReactionEntityFields
+    }
+}

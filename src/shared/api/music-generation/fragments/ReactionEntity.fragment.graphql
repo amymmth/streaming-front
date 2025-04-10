@@ -1,0 +1,6 @@
+fragment ReactionEntityFields on ReactionEntity {
+    id
+    createdAt
+    songId
+    reaction
+}

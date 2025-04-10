@@ -1,0 +1,6 @@
+mutation registerUser($userId: String!) {
+    registerUser(userId: $userId) {
+        id
+        browserSessionId
+    }
+}

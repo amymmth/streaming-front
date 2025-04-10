@@ -1,0 +1,25 @@
+schema:
+  - src/shared/api/music-generation/schema.graphql
+documents: "**/*!(*.generated).{gql,graphql}"
+extensions:
+  endpoints:
+    default: ${VITE_MUSIC_GENERATION_ENTRYPOINT}
+  codegen:
+    overwrite: true
+    documents: "**/*!(*.generated).{gql,graphql}"
+    generates:
+      src/shared/api/types.ts:
+        plugins:
+          - typescript
+      src/shared/api/music-generation/combined.generated.tsx:
+        plugins:
+          - typescript
+          - typescript-operations
+          - typescript-react-apollo
+        config:
+          withHooks: true
+          withHOC: false
+          withRefetchQueries: true
+        hooks:
+          beforeAllFileWrite:
+            - "prepend: '// @ts-nocheck'"

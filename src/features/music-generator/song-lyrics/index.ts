@@ -1,0 +1,1 @@
+export {SongLyricsInput} from './song-lyrics-input.tsx'

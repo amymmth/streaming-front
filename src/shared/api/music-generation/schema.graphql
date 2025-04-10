@@ -1,0 +1,127 @@
+# This file was generated. Do not edit manually.
+
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+"Indicates exactly one field must be supplied and this field must not be `null`."
+directive @oneOf on INPUT_OBJECT
+
+type Mutation {
+    deleteSong(songId: String!): Boolean!
+    generateSong(input: GenerateSongInput!): SongEntity!
+    makeReaction(input: MakeReactionInput!): ReactionEntity!
+    poetryGenerate(input: GeneratePoemInput!): PoetryEntity!
+    registerUser(userId: String!): UserEntity!
+}
+
+type PoetryEntity {
+    createdAt: String!
+    estimation: Float
+    id: ID!
+    requestId: String
+    requestText: String!
+    resultText: String
+    score: Float
+    status: String!
+    user: UserEntity!
+    variants: [String!]
+}
+
+type Query {
+    generateText(prompt: String!): String!
+    getGigachatToken: String!
+    getSongById(id: String!): SongEntity
+    getSongs(input: SongQueryInput!): [SongEntity!]!
+    poetryGetResult(poetryId: String!): PoetryEntity!
+}
+
+type ReactionEntity {
+    createdAt: DateTime!
+    id: ID!
+    reaction: ReactionType!
+    song: SongEntity!
+    songId: String!
+}
+
+type SongEntity {
+    coordinatorQueryId: ID
+    createdAt: DateTime!
+    "Продолжительность записи в секундах"
+    duration: Float
+    id: ID!
+    imageGenerationStatus: ImageGenerationStatusEnum!
+    imageQueryId: String
+    imageUrl: String
+    midiUrl: String
+    mp3Url: String
+    name: String!
+    reactions: [ReactionEntity!]
+    status: SongStatus!
+    style: String
+    text: String
+    user: UserEntity!
+    userId: Float!
+}
+
+type UserEntity {
+    browserSessionId: ID!
+    createdAt: DateTime!
+    id: ID!
+    jwtKey: String
+    songs: [SongEntity!]!
+}
+
+enum ImageGenerationStatusEnum {
+    CANCELLED
+    FAILED
+    PENDING
+    READY
+}
+
+enum ReactionType {
+    Dislike
+    Like
+}
+
+enum SongStatus {
+    Cancelled
+    Censored
+    Finished
+    Started
+}
+
+enum SortOrder {
+    CREATED_AT_ASC
+    CREATED_AT_DESC
+    LIKES_ASC
+    LIKES_DESC
+}
+
+"A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format."
+scalar DateTime
+
+input GeneratePoemInput {
+    genre: String! = "лирика"
+    requestText: String!
+    userId: String!
+}
+
+input GenerateSongInput {
+    songStyle: String!
+    text: String
+    userId: String!
+}
+
+input MakeReactionInput {
+    reaction: ReactionType!
+    songId: String!
+}
+
+input SongQueryInput {
+    from: Int = 0
+    sortBy: SortOrder = CREATED_AT_ASC
+    take: Int = 10
+    userId: ID!
+}

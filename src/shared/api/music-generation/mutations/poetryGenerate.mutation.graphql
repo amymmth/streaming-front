@@ -1,0 +1,5 @@
+mutation PoetryGenerate($input: GeneratePoemInput!) {
+    poetryGenerate(input: $input) {
+        ...PoetryEntityFields
+    }
+}

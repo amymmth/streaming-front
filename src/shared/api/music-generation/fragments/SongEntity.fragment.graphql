@@ -1,0 +1,15 @@
+fragment SongEntityFields on SongEntity {
+    coordinatorQueryId
+    createdAt
+    duration
+    id
+    imageGenerationStatus
+    imageQueryId
+    imageUrl
+    midiUrl
+    mp3Url
+    name
+    status
+    style
+    text
+}

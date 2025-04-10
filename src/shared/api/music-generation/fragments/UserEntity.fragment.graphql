@@ -1,0 +1,9 @@
+fragment UserEntityFields on UserEntity {
+    id
+    browserSessionId
+    createdAt
+    songs {
+        id
+        name
+    }
+}

@@ -1,0 +1,5 @@
+mutation GenerateSong($input: GenerateSongInput!) {
+    generateSong(input: $input) {
+        ...SongEntityFields
+    }
+}

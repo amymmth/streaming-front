@@ -1,0 +1,30 @@
+.container {
+    @apply flex overflow-x-auto space-x-2 relative;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.fade {
+    mask: linear-gradient(to right, rgba(0, 0, 0, 1) 0, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0) 0) 100% 50% / 100% 100%;
+    @apply pr-16;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+
+.tag {
+    @apply px-3 py-2 rounded-full text-white whitespace-nowrap transition-colors;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .tag:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}

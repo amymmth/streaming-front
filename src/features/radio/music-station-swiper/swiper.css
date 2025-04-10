@@ -1,0 +1,123 @@
+
+:root {
+    --swiper-stations-scale: 1;
+    --swiper-stations-slide-size: 100%;
+    --swiper-stations-slide-border-radius: 1.625rem;
+}
+
+
+.swiper-stations {
+    width: 100%;
+    height: 100%;
+}
+
+
+.swiper-stations-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.5) translateZ(-100px);
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: blur(2px);
+}
+
+.swiper-stations-label {
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2);
+    }
+}
+
+
+.swiper-slide {
+    position: relative;
+    width: 390px !important;
+    height: 440px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: var(--swiper-stations-slide-border-radius);
+    overflow: hidden;
+    user-select: none;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        border-radius: var(--swiper-stations-slide-border-radius);
+        box-shadow: inset 1px 1px 0 rgba(255, 255, 255, .2), inset -1px -1px 0 rgba(255, 255, 255, .2);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .swiper-slide {
+        width: 90% !important;
+        margin: 0 auto;
+    }
+}
+
+.swiper-slide:not(.swiper-slide-visible) {
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.swiper-slide-active {
+    .swiper-stations-image {
+        transform: scale(1) translateZ(100px);
+        transition: transform 0.3s ease, filter 0.3s ease;
+        filter: blur(0px);
+    }
+
+    .swiper-stations-label {
+        opacity: 1;
+        transform: translateY(0);
+
+        .card-background-blur {
+            transform: translateY(0);
+        }
+    }
+}
+
+.card-background-blur {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    z-index: -1;
+    filter: blur(10px);
+    background-position: bottom center;
+    background-attachment: fixed;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease;
+}
+
+.overlay-gradient-noise {
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    z-index: -1;
+}

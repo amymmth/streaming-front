@@ -1,0 +1,6 @@
+query getSongs($input: SongQueryInput!) {
+    getSongs(input: $input){
+        id
+        name
+    }
+}

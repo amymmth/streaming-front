@@ -1,0 +1,38 @@
+{
+  "dark": {
+    "token": {
+      "colorPrimary": "#3c5eee",
+      "colorError": "#cd403e",
+      "fontSize": 13,
+      "borderRadius": 4,
+      "wireframe": false,
+      "colorBgLayout": "#141414"
+    },
+    "components": {
+      "Layout": {
+        "headerBg": "#141414"
+      },
+      "Menu": {
+        "darkItemBg": "#141414"
+      }
+    }
+  },
+  "default": {
+    "token": {
+      "colorPrimary": "#3c5eee",
+      "colorError": "#cd403e",
+      "fontSize": 13,
+      "borderRadius": 4,
+      "wireframe": false,
+      "colorBgLayout": "#f0f2f5"
+    },
+    "components": {
+      "Layout": {
+        "headerBg": "#141414"
+      },
+      "Menu": {
+        "darkItemBg": "#141414"
+      }
+    }
+  }
+}
